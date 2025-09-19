@@ -4,7 +4,7 @@ import os
 import sys
 
 gi.require_version("Gtk", "3.0")
-gi.require_version("WebKit2", "4.1")  # voor GTK3 is het meestal "4.0"
+gi.require_version("WebKit2", "4.1")
 
 from gi.repository import Gtk, WebKit2, GLib, Gdk
 
@@ -22,6 +22,7 @@ class BrowserWindow(Gtk.Application):
         GLib.set_application_name("gwhatsapp")
 
     def do_activate(self):
+        global win
         win=Gtk.ApplicationWindow(application=self, title="gwhatsapp")
         win.set_default_size(800, 600)
         win.connect("key-press-event", Key_Event)
@@ -33,7 +34,7 @@ class BrowserWindow(Gtk.Application):
         # Create WebsiteDataManager with custom directories
         data_manager = WebKit2.WebsiteDataManager(base_cache_directory=cache_dir, base_data_directory=cache_dir)
 
-	# Create a web context for the WebView
+	    # Create a web context for the WebView
         context = WebKit2.WebContext.new_with_website_data_manager(data_manager)
 
         # Get the cookie manager
@@ -50,7 +51,7 @@ class BrowserWindow(Gtk.Application):
         webview.load_uri("https://web.whatsapp.com")
         webview.set_zoom_level(1.5)
 
-	# Scrolled window (optioneel)
+	    # Scrolled window (optioneel)
         scrolled = Gtk.ScrolledWindow()
         scrolled.add(webview)
 
