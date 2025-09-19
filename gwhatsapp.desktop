@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=gWhatsapp
+Exec=/usr/bin/gwhatsapp
+Comment=Whatsapp GUI Client
+Terminal=false
+Icon=/usr/share/gwhatsapp-sprokkel78/whatsapp.svg
+Type=Application
