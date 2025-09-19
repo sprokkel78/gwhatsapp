@@ -48,7 +48,7 @@ class BrowserWindow(Gtk.Application):
         # Create WebView using this context
         webview = WebKit2.WebView.new_with_context(context)
         webview.load_uri("https://web.whatsapp.com")
-        webview.set_zoom_level(1.2)
+        webview.set_zoom_level(1.5)
 
 	# Scrolled window (optioneel)
         scrolled = Gtk.ScrolledWindow()
